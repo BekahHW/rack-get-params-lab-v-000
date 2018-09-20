@@ -22,6 +22,7 @@ class Application
           resp.write "#{grocery}\n"
         end
       end
+      elsif req.path.match(/add/)
     else
       resp.write "Path Not Found"
     end
