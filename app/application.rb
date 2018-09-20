@@ -13,6 +13,8 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
+     elsif req.path.match(/cart/)
+      search_term = re
     else
       resp.write "Path Not Found"
     end
@@ -20,7 +22,6 @@ class Application
     resp.finish
   end
   
-  if req.path.match(/cart)
 
   def handle_search(search_term)
     if @@items.include?(search_term)
