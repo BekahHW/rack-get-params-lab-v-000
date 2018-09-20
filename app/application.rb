@@ -19,6 +19,8 @@ class Application
 
     resp.finish
   end
+  
+  if req.path.match(/cart)
 
   def handle_search(search_term)
     if @@items.include?(search_term)
