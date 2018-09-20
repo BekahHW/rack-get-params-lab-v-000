@@ -15,7 +15,7 @@ class Application
       search_term = req.params["q"]
       resp.write handle_search(search_term)
       
-      # rout to show items in the cart
+      # route to show items in the cart
      elsif req.path.match(/cart/)
       if @@cart.empty?
         resp.write "Your cart is empty."
@@ -24,6 +24,7 @@ class Application
           resp.write "#{grocery}\n"
         end
       end
+      # route that takes in a GET param with key item. Checks to see if item is in @@items and then adds to cart if it is. Otherwise erro.
       elsif req.path.match(/add/)
          new_item = req.params["item"]
           if @@items.include? new_item
